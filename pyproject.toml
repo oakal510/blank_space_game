@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "blank-space-game"
+version = "0.1.0"
+description = "A fun social game"
+authors = ["Alla Barbalat <allabarbalat@gmail.com>"]
+readme = "README.md"
+packages = [{include = "blank_space_game"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
