@@ -24,7 +24,7 @@ class Player:
 
 def main():
     try:
-        sentences = open_csv("sentences.csv")
+        sentences = open_csv("assets/sentences.csv")
     except FileNotFoundError:
         sys.exit("This game cannot be loaded at this time.")
 
@@ -39,6 +39,7 @@ def main():
         if round < number_of_rounds:
             for player in game_players:
                 print(f'After this round, Player {player.name} has a score of {player.score}.')
+        # TODO: upddate to make this the final score
         else:
             for player in game_players:
                 print(f'The final score for {player.name} is {player.score}.')
@@ -119,7 +120,7 @@ def score_round(players):
 
     voted_player = {}
     for player in players:
-        vote = input(f"Which player does {player.namec} vote for this round? ").title()
+        vote = input(f"Which player does {player.name} vote for this round? ").title()
         if any(player.name == vote for player in players):
             if vote in voted_player:
                 voted_player[vote] += 1
